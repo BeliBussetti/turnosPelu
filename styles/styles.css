@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1e21; 
+    color: #ffffff; 
+    margin: 0;
+    padding: 0;
+}
+
+#titulo {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%; 
+}
+
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lista-dias {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lista-dias li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 1px solid #333; 
+}
+
+.lista-dias li:last-child {
+    border-bottom: none;
+}
+
+.lista-dias .dia {
+    font-weight: bold;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    background-color: #0066cc; 
+    color: #fff; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #005bb5; 
+}
+
+.btn-back {
+    background-color: transparent;
+    color: #fff;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.btn-back:hover {
+    color: #ccc;
+}
+
+.btn-reservar {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    background-color: #0066cc; 
+    color: #fff; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-reservar:hover {
+    background-color: #005bb5; 
+}
+
+
+.lista-turnos {
+    list-style-type: none;
+    padding: 0;
+    color: #ffffff; 
+}
+
+.lista-turnos li {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 1px solid #333; 
+}
+
+.lista-turnos li:last-child {
+    border-bottom: none;
+}
+
+.lista-turnos .hora-turno {
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .lista-dias li {
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .btn-reservar {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
+
+.btn-reservar {
+    margin-left: auto; 
+}
+
