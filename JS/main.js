@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function verTurnos(fecha) {
-    // Redirigir a la página de detalles con parámetros
     window.location.href = `pages/turnos.html?fecha=${fecha}`;
 }
 
@@ -21,11 +20,11 @@ function generarDiasDeSemana() {
     const dias = [];
     const today = new Date();
     const options = { weekday: 'long', day: 'numeric', month: 'short' };
-    let dayCount = 0; // Variable para contar los días que hemos agregado
+    let dayCount = 0; // Variable para contar los días  agregados
 
     while (dias.length < 7) {
         const nextDay = new Date(today);
-        nextDay.setDate(today.getDate() + dayCount); // Avanzar 1 día (o más) en cada iteración
+        nextDay.setDate(today.getDate() + dayCount); // Avanzar 1 día iteración
         if (nextDay.getDay() !== 0) {
             const diaString = nextDay.toLocaleDateString('es-ES', options);
             dias.push({ 

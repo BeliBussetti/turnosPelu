@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const fechaCompleta = new Date(`${new Date().getFullYear()} ${fecha}`);
     const dia = fechaCompleta.toLocaleDateString('es-ES', opcionesFecha);
 
-    document.getElementById('titulo').textContent = fecha; // Establece solo la fecha
+    document.getElementById('titulo').textContent = fecha;
 
     const diaSemana = fechaCompleta.toLocaleDateString('es-ES', { weekday: 'long' });
 
-    // Generar turnos disponibles basados en el día de la semana
+    // Generar turnos
     const turnos = generarTurnosDisponibles(diaSemana);
     const listaTurnos = document.getElementById('lista-turnos');
 
@@ -54,9 +54,9 @@ function generarTurnosDisponibles(diaSemana) {
                 turnos.push(`${hour}:30`);
             }
             if (end % 1 !== 0) {
-                turnos.push(`${Math.floor(end)}:30`); // Agregar el último intervalo si el final no es una hora completa
+                turnos.push(`${Math.floor(end)}:30`); 
             } else {
-                turnos.push(`${end}:00`); // Agregar el último intervalo si el final es una hora completa
+                turnos.push(`${end}:00`); 
             }
         });
     }
