@@ -18,14 +18,22 @@ document.addEventListener('DOMContentLoaded', function () {
         const li = document.createElement('li');
         li.innerHTML = `
             <span class="hora-turno">${turno}</span>
-            <button class="btn-reservar" onclick="reservarTurno('${turno}')">Reservar</button>
+            <button class="btn-reservar" onclick="reservarTurno('${fecha}', '${turno}')">Reservar</button>
         `;
         listaTurnos.appendChild(li);
     });
 });
 
-function reservarTurno(turno) {
-    alert(`Reservando turno para ${turno}. Funcionalidad de reserva no implementada aún.`);
+function reservarTurno(fecha, turno) {
+    const nombreCompleto = prompt("Por favor, ingrese su nombre y apellido:");
+
+    if (nombreCompleto) {
+        const telefono = "+542244509598"; // Número de teléfono de la peluquería en formato internacional
+        const mensaje = `Hola, soy ${nombreCompleto} y quiero reservar el día ${fecha} a las ${turno}.`;
+        const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+
+        window.location.href = whatsappURL;
+    }
 }
 
 function goBack() {
