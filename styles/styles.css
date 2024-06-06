@@ -9,30 +9,24 @@ body {
 #titulo {
     text-align: center;
     margin-bottom: 20px;
-    width: 100%; 
+    flex: 1;
 }
 
 .container {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-}
-
-h1 {
-    text-align: center; 
-    margin-bottom: 20px;
-    flex: 1; /* Asegura que el título tome todo el espacio disponible */
+    text-align: center; /* Centrar contenido */
 }
 
 .header {
     display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
     align-items: center;
-    gap: 10px; /* Espacio entre el logo y el título */
+    position: relative; /* Añadido */
 }
 
 .logo {
-    width: 50px; /* Ajusta el tamaño según sea necesario */
+    width: 150px; /* Ajusta el tamaño según sea necesario */
 }
 
 .lista-dias {
@@ -78,6 +72,8 @@ h1 {
     border: none;
     cursor: pointer;
     transition: color 0.3s;
+    position: absolute; /* Añadido */
+    left: 0; /* Añadido */
 }
 
 .btn-back:hover {
