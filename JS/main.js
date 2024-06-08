@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     dias.forEach(dia => {
         const li = document.createElement('li');
         li.innerHTML = `
-            <span class="dia">${dia.dia}, ${dia.fecha}</span>
+            <span class="dia">${capitalizarPrimeraLetra(dia.dia)}, ${dia.fecha}</span>
             <button class="btn" onclick="verTurnos('${dia.fecha}')">Ver Turnos</button>
         `;
         listaDias.appendChild(li);
@@ -20,7 +20,7 @@ function generarDiasDeSemana() {
     const dias = [];
     const today = new Date();
     const options = { weekday: 'long', day: 'numeric', month: 'short' };
-    let dayCount = 0; // Variable para contar los días  agregados
+    let dayCount = 0; // let para contar los días  agregados
 
     while (dias.length < 7) {
         const nextDay = new Date(today);
@@ -38,3 +38,6 @@ function generarDiasDeSemana() {
     return dias;
 }
 
+function capitalizarPrimeraLetra(cadena) {
+    return cadena.charAt(0).toUpperCase() + cadena.slice(1);
+}

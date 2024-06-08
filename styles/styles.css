@@ -117,6 +117,7 @@ body {
     font-weight: bold;
 }
 
+/* Media query para dispositivos con un ancho máximo de 600px */
 @media (max-width: 600px) {
     .container {
         margin: 10px;
@@ -125,6 +126,50 @@ body {
 
     .lista-dias li {
         padding: 10px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .btn-reservar {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
+
+/* Media query para dispositivos con un ancho máximo de 828px */
+@media (max-width: 828px) {
+    .container {
+        max-width: 90%; /* Ajustar el ancho del contenedor */
+    }
+
+    .logo {
+        width: 100px; /* Ajustar el tamaño del logo */
+    }
+
+    .btn {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+
+    .btn-reservar {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+}
+
+/* Media query para dispositivos con un ancho máximo de 414px (puntos CSS) */
+@media (max-width: 414px) {
+    .container {
+        max-width: 100%; /* Ajustar el ancho del contenedor */
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .logo {
+        width: 80px; /* Ajustar el tamaño del logo */
     }
 
     .btn {

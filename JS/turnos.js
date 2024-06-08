@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const opcionesFecha = { weekday: 'long', day: 'numeric', month: 'short' };
     const fechaCompleta = new Date(`${new Date().getFullYear()} ${fecha}`);
-    const dia = fechaCompleta.toLocaleDateString('es-ES', opcionesFecha);
+    const dia = capitalizarPrimeraLetra(fechaCompleta.toLocaleDateString('es-ES', opcionesFecha));
 
-    document.getElementById('titulo').textContent = fecha;
+    document.getElementById('titulo').textContent = dia;
 
     const diaSemana = fechaCompleta.toLocaleDateString('es-ES', { weekday: 'long' });
 
@@ -24,11 +24,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function capitalizarPrimeraLetra(cadena) {
+    return cadena.charAt(0).toUpperCase() + cadena.slice(1);
+}
+
 function reservarTurno(fecha, turno) {
     const nombreCompleto = prompt("Por favor, ingrese su nombre y apellido:");
 
     if (nombreCompleto) {
-        const telefono = "+542244509598"; // Número de teléfono de la peluquería en formato internacional
+        const telefono = "+542244509598"; // Num en formato internacional
         const mensaje = `Hola, soy ${nombreCompleto} y quiero reservar el día ${fecha} a las ${turno}.`;
         const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
@@ -51,7 +55,7 @@ function generarTurnosDisponibles(diaSemana) {
     };
 
     const turnos = [];
-    const interval = 30; // Intervalo de 30 minutos
+    const interval = 30;
 
     const sesiones = horarios[diaSemana.toLowerCase()];
     if (sesiones) {
