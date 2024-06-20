@@ -2,8 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const params = new URLSearchParams(window.location.search);
     const fecha = params.get('fecha');
 
+    // Formato esperado 'YYYY-MM-DD'
     const opcionesFecha = { weekday: 'long', day: 'numeric', month: 'short' };
-    const fechaCompleta = new Date(`${new Date().getFullYear()} ${fecha}`);
+    const fechaCompleta = new Date(fecha);
     const dia = capitalizarPrimeraLetra(fechaCompleta.toLocaleDateString('es-ES', opcionesFecha));
 
     document.getElementById('titulo').textContent = dia;
@@ -32,7 +33,7 @@ function reservarTurno(fecha, turno) {
     const nombreCompleto = prompt("Por favor, ingrese su nombre y apellido:");
 
     if (nombreCompleto) {
-        const telefono = "+542244509598"; // Num en formato internacional
+        const telefono = "+542244509598"; // Número de teléfono en formato internacional
         const mensaje = `Hola, soy ${nombreCompleto} y quiero reservar el día ${fecha} a las ${turno}.`;
         const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
@@ -66,9 +67,9 @@ function generarTurnosDisponibles(diaSemana) {
                 turnos.push(`${hour}:30`);
             }
             if (end % 1 !== 0) {
-                turnos.push(`${Math.floor(end)}:30`); 
+                turnos.push(`${Math.floor(end)}:30`);
             } else {
-                turnos.push(`${end}:00`); 
+                turnos.push(`${end}:00`);
             }
         });
     }

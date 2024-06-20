@@ -13,23 +13,24 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function verTurnos(fecha) {
-    window.location.href = `pages/turnos.html?fecha=${fecha}`;
+    // Aquí redireccionas a la página de turnos.html con la fecha como parámetro
+    window.location.href = `pages/turnos.html?fecha=${encodeURIComponent(fecha)}`;
 }
 
 function generarDiasDeSemana() {
     const dias = [];
     const today = new Date();
     const options = { weekday: 'long', day: 'numeric', month: 'short' };
-    let dayCount = 0; // let para contar los días  agregados
+    let dayCount = 0;
 
     while (dias.length < 7) {
         const nextDay = new Date(today);
-        nextDay.setDate(today.getDate() + dayCount); // Avanzar 1 día iteración
+        nextDay.setDate(today.getDate() + dayCount);
         if (nextDay.getDay() !== 0) {
             const diaString = nextDay.toLocaleDateString('es-ES', options);
-            dias.push({ 
+            dias.push({
                 dia: diaString.split(',')[0],
-                fecha: diaString.split(',')[1].trim()
+                fecha: nextDay.toISOString().split('T')[0] // Formato ISO para compatibilidad
             });
         }
         dayCount++;
